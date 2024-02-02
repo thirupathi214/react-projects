@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: tomato;
+
+}
+
+.input{
+    width: 100%;
+    
+    
+}
+.email{
+    font-size: 1.5rem;
+    margin-top: 40px;
+}
