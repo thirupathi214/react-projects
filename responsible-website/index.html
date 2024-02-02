@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- include stylecss file  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- include font awesome cdn  -->
+    <link rel="stylesheet"
+        href="D:\SANTHOSH\Learning\WEB-Course\Projects\responsive websit5e\fonts\font-awesome-4.7.0\css\font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <!-- belpow nav bar will add the navigation widget in page  -->
+        <nav>
+            <div class="logo">
+                Skyrules<span>ZX</span> Site
+            </div>
+
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="icon">
+                <i class="fa fa-search"></i>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+
+        <!-- below section add the center text field with search and submit button -->
+
+        <section class="h-text">
+            <i class="fa fa-camera" id="camera"></i>
+            <h1>Please check for the camera icon placed on above this is using the font awesome. </h1>
+            <input type="text" placeholder="Search here">
+            <button><i class="fa fa-search"></i>click here</button>
+        </section>
+    </header>
+
+    <!-- below secition add the gallerey view in the web page  -->
+
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*">All</li>
+
+                <!-- always we need to give data-filetr valuewith dot(.) in beginning since its been used below with item class name 
+                so when ever class is referred we need to give dot-->
+                <li data-filter=".nature">Nature</li>
+                <li data-filter=".fashion">Fashion</li>
+                <li data-filter=".wedding">Wedding</li>
+
+            </ul>
+        </div>
+
+        <div class="portfolio-item">
+
+            <div class="item nature">
+                <img src="images/n1.jpg" alt="no image" height="100" width="100">
+            </div>
+            <div class="item fashion">
+                <img src="images/f1.jfif" alt="no image" height="100" width="100">
+            </div>
+            <div class="item wedding">
+                <img src="images/w1.jfif" alt="no image" height="100" width="100">
+            </div>
+
+            <div class="item nature">
+                <img src="images/n2.jpg" alt="no image" height="100" width="100">
+            </div>
+            <div class="item fashion">
+                <img src="images/f2.jpg" alt="no image" height="100" width="100">
+            </div>
+            <div class="item wedding">
+                <img src="images/w2.png" alt="no image" height="100" width="100">
+            </div>
+
+            <div class="item nature">
+                <img src="images/n3.jpg" alt="no image" height="100" width="100">
+            </div>
+            <div class="item fashion">
+                <img src="images/f3.jfif" alt="no image" height="100" width="100">
+            </div>
+            <div class="item wedding">
+                <img src="images/w3.jpg" alt="no image" height="100" width="100">
+            </div>
+
+        </div>
+
+        <!-- next we need to create filter effect where the control flows from all to nature fashoin wedding for this we need to use jquery isotope cdn paste the cdk key beforeend of body tag next search jquery cdn by clicking on minified and paste before body tag ending before the isotope tag
+        next go to isotope jquery select initialize with jquery section and copy the isotope jquery code and paste inthis file by creating seperate script tag 
+        -->
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- here replace the grid with portfolio-item  -->
+
+    <script>
+        $('.portfolio-item').isotope({
+            // options
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+
+        // the below code will remove the active state from all and move with the portfolio-menu items
+
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+
+
+            // the below lines store the one seletecd by used the data-filter created above like nature fashion wedding in selector variable
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+
+            return false;
+
+        });
+    </script>
+
+
+    <!-- the below section is for information on footer part  -->
+
+    <section class="member">
+        <div class="member-info">
+            <h1>Our Wesite <span>Information</span></h1>
+            <p>Sample Paragraph</p>
+        </div>
+
+        <div class="member-card">
+            <img src="images/sandy.jpg" alt="" height="200" width="150">
+            <p>
+                Hello I am from Bangalore and i work in IT . I am an enthusiastic person , lite to travel , treck , swimm.
+                I love to listen music and I always beleive in Unity in Diversity the mantra of our country. 
+            </p>
+            <h2>Santhosh Kumar Yadav</h2>
+            
+            <!-- adding the icons  -->
+            
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <div class="m-images">
+            <img src="images/m1.jpg" alt="" width="100" height="100">
+            <img src="images/m4.jfif" alt="" width="100" height="100">
+            <img src="images/m2.jpg" alt="" width="100" height="100">
+            <img src="images/m5.webp" alt="" width="100" height="100">
+            <img src="images/m3.jpg" alt="" width="100" height="100">
+            <img src="images/m6.png" alt="" width="100" height="100">
+        </div>
+    </section>
+
+</body>
+
+</html>
